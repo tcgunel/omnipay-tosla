@@ -18,8 +18,6 @@ composer require tcgunel/omnipay-tosla
 
 ## Usage
 
-Please see the [Wiki](https://github.com/tcgunel/omnipay-tosla/wiki) page for detailed usage of every method.
-
 [Tosla developer center](https://tosla.com/isim-icin/gelistirici-merkezi)
 
 Check /examples folder for examples.
