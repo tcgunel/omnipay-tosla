@@ -27,7 +27,6 @@ class VerifyEnrolmentRequest extends AbstractRequest
             'mdStatus',
             'threeDSessionId',
             'bankResponseCode',
-            'bankResponseMessage',
             'requestStatus',
             'hashParameters',
             'hash',

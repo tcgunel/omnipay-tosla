@@ -10,7 +10,7 @@ class VerifyEnrolmentRequestModel extends BaseModel
     public string $MdStatus;
     public string $ThreeDSessionId;
     public string $BankResponseCode;
-    public string $BankResponseMessage;
+    public ?string $BankResponseMessage = null;
     public string $RequestStatus;
     public string $HashParameters;
     public string $Hash;
