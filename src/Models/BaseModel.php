@@ -10,9 +10,15 @@ class BaseModel
     {
         foreach ($abstract as $key => $arg) {
 
+            $methodName = 'set' . str_replace('_', '', $key);
+
             $key = str_replace('-', '_', $key);
 
-            if (property_exists($this, $key)) {
+            if (method_exists($this, $methodName)){
+
+                $this->$methodName($arg);
+
+            }else if (property_exists($this, $key)) {
 
                 $this->$key = $this->formatField($key, $arg);
 

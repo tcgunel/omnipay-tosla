@@ -22,4 +22,25 @@ class BinLookupResponseModel extends BaseModel
 
     /** @var null|CommissionPackagesModel[] */
     public ?array $CommissionPackages = null;
+
+    public function setCommissionPackages(?array $commissonPackages): void
+    {
+        foreach ($commissonPackages as $commissonPackage) {
+            if (! empty($commissonPackage['InstallmentRate'])) {
+                $rates = [
+                    [
+                        'Rate' => 0,
+                        'Constant' => 0,
+                        'Installment' => 1,
+                    ],
+                ];
+
+                foreach ($commissonPackage['InstallmentRate'] as $key => $InstallmentRate) {
+                    $rates[] = array_merge($InstallmentRate, ['Installment' => (int) str_replace('T', '', $key)]);
+                }
+
+                $this->CommissionPackages = $rates;
+            }
+        }
+    }
 }
