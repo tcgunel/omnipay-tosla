@@ -6,6 +6,6 @@ class EnrolmentResponseModel extends BaseModel
 {
     public int $Code;
     public string $Message;
-    public string $ThreeDSessionId;
-    public string $TransactionId;
+    public ?string $ThreeDSessionId;
+    public ?string $TransactionId;
 }
