@@ -6,6 +6,7 @@ use Omnipay\Common\AbstractGateway;
 use Omnipay\Common\Message\AbstractRequest;
 use Omnipay\Tosla\Message\BinLookupRequest;
 use Omnipay\Tosla\Message\ChargeRequest;
+use Omnipay\Tosla\Message\CheckoutFormRequest;
 use Omnipay\Tosla\Message\CompletePurchaseRequest;
 use Omnipay\Tosla\Message\EnrolmentRequest;
 use Omnipay\Tosla\Message\HistoryRequest;
@@ -91,5 +92,10 @@ class Gateway extends AbstractGateway
     public function paymentPage(array $parameters = []): AbstractRequest
     {
         return $this->createRequest(PaymentPageRequest::class, $parameters);
+    }
+
+    public function checkoutForm(array $parameters = []): AbstractRequest
+    {
+        return $this->createRequest(CheckoutFormRequest::class, $parameters);
     }
 }

@@ -32,7 +32,9 @@ class EnrolmentRequest extends RemoteAbstractRequest
             'currency',
         );
 
-        $this->getCard()->validate();
+        if (! property_exists($this, 'is_checkout_form_request')){
+            $this->getCard()->validate();
+        }
 
         ini_set('date.timezone', 'Europe/Istanbul');
 
@@ -74,7 +76,7 @@ class EnrolmentRequest extends RemoteAbstractRequest
         return base64_encode($hashing_bytes);
     }
 
-    protected function createResponse($data): EnrolmentResponse
+    protected function createResponse($data): EnrolmentResponse|CheckoutFormResponse
     {
         return $this->response = new EnrolmentResponse($this, $data);
     }
