@@ -25,7 +25,6 @@ class ChargeRequest extends RemoteAbstractRequest
             'clientId',
             'apiUser',
             'apiPass',
-
             'amount',
             'currency',
         );
@@ -70,7 +69,7 @@ class ChargeRequest extends RemoteAbstractRequest
         $rnd = $purchaseRequestModel['rnd'];
         $timeSpan = $purchaseRequestModel['timeSpan'];
 
-        $hashString = $apiPass.$clientId.$apiUser.$rnd.$timeSpan;
+        $hashString = $apiPass . $clientId . $apiUser . $rnd . $timeSpan;
 
         $hashing_bytes = hash('sha512', ($hashString), true);
 

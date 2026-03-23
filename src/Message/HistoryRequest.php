@@ -3,8 +3,6 @@
 namespace Omnipay\Tosla\Message;
 
 use Omnipay\Common\Exception\InvalidCreditCardException;
-use Omnipay\Tosla\Helpers\Helper;
-use Omnipay\Tosla\Models\BinLookupRequestModel;
 use Omnipay\Tosla\Models\HistoryRequestModel;
 
 class HistoryRequest extends RemoteAbstractRequest
@@ -23,7 +21,6 @@ class HistoryRequest extends RemoteAbstractRequest
             'clientId',
             'apiUser',
             'apiPass',
-
             'transactionDate',
             'page',
             'pageSize',
@@ -57,7 +54,7 @@ class HistoryRequest extends RemoteAbstractRequest
         $rnd = $purchaseRequestModel->rnd;
         $timeSpan = $purchaseRequestModel->timeSpan;
 
-        $hashString = $apiPass.$clientId.$apiUser.$rnd.$timeSpan;
+        $hashString = $apiPass . $clientId . $apiUser . $rnd . $timeSpan;
 
         $hashing_bytes = hash('sha512', ($hashString), true);
 

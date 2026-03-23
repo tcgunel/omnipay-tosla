@@ -26,13 +26,12 @@ class EnrolmentRequest extends RemoteAbstractRequest
             'clientId',
             'apiUser',
             'apiPass',
-
             'returnUrl',
             'amount',
             'currency',
         );
 
-        if (! property_exists($this, 'is_checkout_form_request')){
+        if (! property_exists($this, 'is_checkout_form_request')) {
             $this->getCard()->validate();
         }
 
@@ -69,7 +68,7 @@ class EnrolmentRequest extends RemoteAbstractRequest
         $rnd = $EnrolmentRequestModel->rnd;
         $timeSpan = $EnrolmentRequestModel->timeSpan;
 
-        $hashString = $apiPass.$clientId.$apiUser.$rnd.$timeSpan;
+        $hashString = $apiPass . $clientId . $apiUser . $rnd . $timeSpan;
 
         $hashing_bytes = hash('sha512', ($hashString), true);
 

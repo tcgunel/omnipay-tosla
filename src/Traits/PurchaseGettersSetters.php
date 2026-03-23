@@ -56,7 +56,7 @@ trait PurchaseGettersSetters
 
     public function getEndpoint()
     {
-        return ($this->getTestMode() ? 'https://prepentegrasyon.tosla.com/api/Payment' : 'https://entegrasyon.tosla.com/api/Payment').$this->endpoint;
+        return ($this->getTestMode() ? 'https://prepentegrasyon.tosla.com/api/Payment' : 'https://entegrasyon.tosla.com/api/Payment') . $this->endpoint;
     }
 
     public function getClientIp()

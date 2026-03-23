@@ -3,7 +3,6 @@
 namespace Omnipay\Tosla\Message;
 
 use Omnipay\Common\Exception\InvalidCreditCardException;
-use Omnipay\Tosla\Models\BinLookupRequestModel;
 use Omnipay\Tosla\Models\VoidRequestModel;
 
 class VoidRequest extends RemoteAbstractRequest
@@ -22,7 +21,6 @@ class VoidRequest extends RemoteAbstractRequest
             'clientId',
             'apiUser',
             'apiPass',
-
             'orderId',
         );
 
@@ -52,7 +50,7 @@ class VoidRequest extends RemoteAbstractRequest
         $rnd = $purchaseRequestModel->rnd;
         $timeSpan = $purchaseRequestModel->timeSpan;
 
-        $hashString = $apiPass.$clientId.$apiUser.$rnd.$timeSpan;
+        $hashString = $apiPass . $clientId . $apiUser . $rnd . $timeSpan;
 
         $hashing_bytes = hash('sha512', ($hashString), true);
 

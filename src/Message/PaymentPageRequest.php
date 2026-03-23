@@ -4,9 +4,7 @@ namespace Omnipay\Tosla\Message;
 
 use Omnipay\Common\Exception\InvalidCreditCardException;
 use Omnipay\Common\Exception\InvalidRequestException;
-use Omnipay\Tosla\Models\EnrolmentRequestModel;
 use Omnipay\Tosla\Models\PaymentPageRequestModel;
-use Omnipay\Tosla\Models\PurchaseRequestModel;
 use Omnipay\Tosla\Traits\PurchaseGettersSetters;
 
 class PaymentPageRequest extends RemoteAbstractRequest
@@ -27,7 +25,6 @@ class PaymentPageRequest extends RemoteAbstractRequest
             'clientId',
             'apiUser',
             'apiPass',
-
             'returnUrl',
             'amount',
             'currency',
@@ -66,7 +63,7 @@ class PaymentPageRequest extends RemoteAbstractRequest
         $rnd = $PaymentPageRequestModel->rnd;
         $timeSpan = $PaymentPageRequestModel->timeSpan;
 
-        $hashString = $apiPass.$clientId.$apiUser.$rnd.$timeSpan;
+        $hashString = $apiPass . $clientId . $apiUser . $rnd . $timeSpan;
 
         $hashing_bytes = hash('sha512', ($hashString), true);
 

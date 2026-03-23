@@ -3,7 +3,6 @@
 namespace Omnipay\Tosla\Message;
 
 use Omnipay\Common\Message\AbstractRequest;
-use Omnipay\Tosla\Models\RequestHeadersModel;
 use Omnipay\Tosla\Models\VerifyEnrolmentRequestModel;
 use Omnipay\Tosla\Traits\PurchaseGettersSetters;
 
@@ -22,7 +21,6 @@ class VerifyEnrolmentRequest extends AbstractRequest
         $this->validate(
             'apiUser',
             'apiPass',
-
             'orderId',
             'mdStatus',
             'threeDSessionId',

@@ -72,7 +72,7 @@ class EnrolmentResponse extends RemoteAbstractResponse implements RedirectRespon
 
         $response->setContent(str_replace('</body>', "$script</body>", $response->getContent()));
 
-        $response->setContent(str_replace('</body>', $this->redirectSpinner().'</body>', $response->getContent()));
+        $response->setContent(str_replace('</body>', $this->redirectSpinner() . '</body>', $response->getContent()));
 
         return $response;
     }
@@ -143,7 +143,7 @@ class EnrolmentResponse extends RemoteAbstractResponse implements RedirectRespon
 		  </svg>
 		</section>';
 
-        return $css.$html;
+        return $css . $html;
     }
 
     public function getRedirectUrl()

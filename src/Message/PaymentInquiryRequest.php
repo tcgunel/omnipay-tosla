@@ -24,7 +24,6 @@ class PaymentInquiryRequest extends RemoteAbstractRequest
             'clientId',
             'apiUser',
             'apiPass',
-
             'orderId',
         );
 
@@ -54,7 +53,7 @@ class PaymentInquiryRequest extends RemoteAbstractRequest
         $rnd = $purchaseRequestModel->rnd;
         $timeSpan = $purchaseRequestModel->timeSpan;
 
-        $hashString = $apiPass.$clientId.$apiUser.$rnd.$timeSpan;
+        $hashString = $apiPass . $clientId . $apiUser . $rnd . $timeSpan;
 
         $hashing_bytes = hash('sha512', ($hashString), true);
 

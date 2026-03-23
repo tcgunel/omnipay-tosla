@@ -14,11 +14,11 @@ class BaseModel
 
             $key = str_replace('-', '_', $key);
 
-            if (method_exists($this, $methodName)){
+            if (method_exists($this, $methodName)) {
 
                 $this->$methodName($arg);
 
-            }else if (property_exists($this, $key)) {
+            } elseif (property_exists($this, $key)) {
 
                 $this->$key = $this->formatField($key, $arg);
 

@@ -1,0 +1,156 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Access to an undefined property Omnipay\\\\Tosla\\\\Gateway\\:\\:\\$endpoint\\.$#"
+			count: 1
+			path: src/Gateway.php
+
+		-
+			message: "#^Negated boolean expression is always true\\.$#"
+			count: 1
+			path: src/Message/BinLookupRequest.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of function sha1 expects string, int\\<0, max\\> given\\.$#"
+			count: 1
+			path: src/Message/BinLookupRequest.php
+
+		-
+			message: "#^Method Omnipay\\\\Tosla\\\\Message\\\\BinLookupResponse\\:\\:getRedirectData\\(\\) should return array but returns null\\.$#"
+			count: 1
+			path: src/Message/BinLookupResponse.php
+
+		-
+			message: "#^Method Omnipay\\\\Tosla\\\\Message\\\\ChargeResponse\\:\\:getRedirectData\\(\\) should return array but returns null\\.$#"
+			count: 1
+			path: src/Message/ChargeResponse.php
+
+		-
+			message: "#^Access to an undefined property Omnipay\\\\Tosla\\\\Message\\\\CheckoutFormResponse\\:\\:\\$endpoint\\.$#"
+			count: 1
+			path: src/Message/CheckoutFormResponse.php
+
+		-
+			message: "#^Call to an undefined method Omnipay\\\\Common\\\\Message\\\\RequestInterface\\:\\:getEndpoint\\(\\)\\.$#"
+			count: 1
+			path: src/Message/CheckoutFormResponse.php
+
+		-
+			message: "#^Call to an undefined method Omnipay\\\\Tosla\\\\Message\\\\CheckoutFormResponse\\:\\:getParameter\\(\\)\\.$#"
+			count: 22
+			path: src/Message/CheckoutFormResponse.php
+
+		-
+			message: "#^Call to an undefined method Omnipay\\\\Tosla\\\\Message\\\\CheckoutFormResponse\\:\\:getTestMode\\(\\)\\.$#"
+			count: 1
+			path: src/Message/CheckoutFormResponse.php
+
+		-
+			message: "#^Call to an undefined method Omnipay\\\\Tosla\\\\Message\\\\CheckoutFormResponse\\:\\:setParameter\\(\\)\\.$#"
+			count: 22
+			path: src/Message/CheckoutFormResponse.php
+
+		-
+			message: "#^Access to an undefined property Omnipay\\\\Common\\\\Message\\\\RequestInterface\\:\\:\\$endpoint\\.$#"
+			count: 1
+			path: src/Message/EnrolmentResponse.php
+
+		-
+			message: "#^Call to an undefined method Omnipay\\\\Common\\\\Message\\\\RequestInterface\\:\\:getCard\\(\\)\\.$#"
+			count: 4
+			path: src/Message/EnrolmentResponse.php
+
+		-
+			message: "#^Call to an undefined method Omnipay\\\\Common\\\\Message\\\\RequestInterface\\:\\:getEndpoint\\(\\)\\.$#"
+			count: 1
+			path: src/Message/EnrolmentResponse.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of function sha1 expects string, int\\<0, max\\> given\\.$#"
+			count: 1
+			path: src/Message/HistoryRequest.php
+
+		-
+			message: "#^Method Omnipay\\\\Tosla\\\\Message\\\\HistoryResponse\\:\\:getRedirectData\\(\\) should return array but returns null\\.$#"
+			count: 1
+			path: src/Message/HistoryResponse.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of function sha1 expects string, int\\<0, max\\> given\\.$#"
+			count: 1
+			path: src/Message/PaymentInquiryRequest.php
+
+		-
+			message: "#^Method Omnipay\\\\Tosla\\\\Message\\\\PaymentInquiryResponse\\:\\:getRedirectData\\(\\) should return array but returns null\\.$#"
+			count: 1
+			path: src/Message/PaymentInquiryResponse.php
+
+		-
+			message: "#^Access to an undefined property Omnipay\\\\Common\\\\Message\\\\RequestInterface\\:\\:\\$endpoint\\.$#"
+			count: 1
+			path: src/Message/PaymentPageResponse.php
+
+		-
+			message: "#^Call to an undefined method Omnipay\\\\Common\\\\Message\\\\RequestInterface\\:\\:getEndpoint\\(\\)\\.$#"
+			count: 1
+			path: src/Message/PaymentPageResponse.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of function sha1 expects string, int\\<0, max\\> given\\.$#"
+			count: 1
+			path: src/Message/RefundRequest.php
+
+		-
+			message: "#^Method Omnipay\\\\Tosla\\\\Message\\\\RefundResponse\\:\\:getRedirectData\\(\\) should return array but returns null\\.$#"
+			count: 1
+			path: src/Message/RefundResponse.php
+
+		-
+			message: "#^Access to an undefined property Omnipay\\\\Tosla\\\\Message\\\\RemoteAbstractRequest\\:\\:\\$endpoint\\.$#"
+			count: 1
+			path: src/Message/RemoteAbstractRequest.php
+
+		-
+			message: "#^Ternary operator condition is always true\\.$#"
+			count: 1
+			path: src/Message/RemoteAbstractRequest.php
+
+		-
+			message: "#^Access to an undefined property Omnipay\\\\Tosla\\\\Message\\\\VerifyEnrolmentRequest\\:\\:\\$endpoint\\.$#"
+			count: 1
+			path: src/Message/VerifyEnrolmentRequest.php
+
+		-
+			message: "#^Call to an undefined method Omnipay\\\\Common\\\\Message\\\\RequestInterface\\:\\:getApiPass\\(\\)\\.$#"
+			count: 1
+			path: src/Message/VerifyEnrolmentResponse.php
+
+		-
+			message: "#^Method Omnipay\\\\Tosla\\\\Message\\\\VerifyEnrolmentResponse\\:\\:getRedirectData\\(\\) should return array but returns null\\.$#"
+			count: 1
+			path: src/Message/VerifyEnrolmentResponse.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of function sha1 expects string, int\\<0, max\\> given\\.$#"
+			count: 1
+			path: src/Message/VoidRequest.php
+
+		-
+			message: "#^Method Omnipay\\\\Tosla\\\\Message\\\\VoidResponse\\:\\:getRedirectData\\(\\) should return array but returns null\\.$#"
+			count: 1
+			path: src/Message/VoidResponse.php
+
+		-
+			message: "#^Property Omnipay\\\\Tosla\\\\Models\\\\BinLookupResponseModel\\:\\:\\$CommissionPackages \\(array\\<Omnipay\\\\Tosla\\\\Models\\\\CommissionPackagesModel\\>\\|null\\) does not accept array\\<int, array\\>\\.$#"
+			count: 1
+			path: src/Models/BinLookupResponseModel.php
+
+		-
+			message: "#^PHPDoc tag @var for property Omnipay\\\\Tosla\\\\Models\\\\CommissionPackagesModel\\:\\:\\$InstallmentRate contains unresolvable type\\.$#"
+			count: 1
+			path: src/Models/CommissionPackagesModel.php
+
+		-
+			message: "#^PHPDoc tag @var for property Omnipay\\\\Tosla\\\\Models\\\\CommissionPackagesModel\\:\\:\\$InstallmentRate with type mixed is not subtype of native type object\\|null\\.$#"
+			count: 1
+			path: src/Models/CommissionPackagesModel.php

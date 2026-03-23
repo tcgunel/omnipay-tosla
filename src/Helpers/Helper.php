@@ -46,6 +46,6 @@ class Helper
 
     public static function prettyPrint($data)
     {
-        echo '<pre>'.print_r($data, true).'</pre>';
+        echo '<pre>' . print_r($data, true) . '</pre>';
     }
 }
