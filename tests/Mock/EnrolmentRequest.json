@@ -1,0 +1,21 @@
+{
+  "clientId": "1000000494",
+  "apiUser": "POS_ENT_Test_001",
+  "apiPass": "POS_ENT_Test_001!*!*",
+  "testMode": true,
+  "secure": true,
+  "amount": "25.50",
+  "currency": "TRY",
+  "transactionId": "TOS-20260322-000002",
+  "installment": 0,
+  "description": "3D Secure test odeme",
+  "returnUrl": "https://example.com/3d-callback",
+  "card": {
+    "firstName": "Ayse",
+    "lastName": "Demir",
+    "number": "5456165456165454",
+    "expiryMonth": "06",
+    "expiryYear": "2029",
+    "cvv": "123"
+  }
+}

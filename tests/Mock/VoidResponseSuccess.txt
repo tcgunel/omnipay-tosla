@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+Server: nginx
+Content-Type: application/json
+Content-Length: 250
+Date: Sun, 22 Mar 2026 12:00:00 GMT
+
+{"Code":0,"Message":"Basarili","OrderId":"TOS-20260322-000001","BankResponseCode":"00","BankResponseMessage":"Iptal onaylandi","AuthCode":"654321","HostReferenceNumber":"789012345679","TransactionId":"TSL-TRX-00003"}

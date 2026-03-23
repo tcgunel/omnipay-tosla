@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+Server: nginx
+Content-Type: application/json
+Content-Length: 200
+Date: Sun, 22 Mar 2026 12:00:00 GMT
+
+{"Code":1,"message":"Kart bilgileri hatali","ValidationErrors":null,"OrderId":null,"BankResponseCode":"05","BankResponseMessage":"Red","AuthCode":null,"HostReferenceNumber":null,"TransactionId":null,"CardHolderName":null}

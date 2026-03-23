@@ -31,6 +31,11 @@
             "Omnipay\\Tosla\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Omnipay\\Tosla\\Tests\\": "tests"
+        }
+    },
     "require": {
         "php": "^8.0",
         "league/omnipay": "^3",
@@ -43,7 +48,14 @@
         "omnipay/tests": "^4",
         "brianium/paratest": "*",
         "fzaninotto/faker": "*",
-        "http-interop/http-factory-guzzle": "^1.2"
+        "http-interop/http-factory-guzzle": "^1.2",
+        "laravel/pint": "^1.0",
+        "phpstan/phpstan": "^1.0"
+    },
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse",
+        "lint": "vendor/bin/pint",
+        "lint-check": "vendor/bin/pint --test"
     },
     "config": {
         "allow-plugins": {

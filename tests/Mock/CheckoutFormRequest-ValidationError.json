@@ -1,0 +1,6 @@
+{
+  "testMode": true,
+  "amount": "75.00",
+  "currency": "TRY",
+  "returnUrl": "https://example.com/checkout-callback"
+}

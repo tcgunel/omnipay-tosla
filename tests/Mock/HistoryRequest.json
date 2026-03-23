@@ -1,0 +1,10 @@
+{
+  "clientId": "1000000494",
+  "apiUser": "POS_ENT_Test_001",
+  "apiPass": "POS_ENT_Test_001!*!*",
+  "testMode": true,
+  "transactionDate": "2026-03-22",
+  "page": 1,
+  "pageSize": 10,
+  "orderId": "TOS-20260322-000001"
+}

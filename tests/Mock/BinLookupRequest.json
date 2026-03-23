@@ -1,0 +1,9 @@
+{
+  "clientId": "1000000494",
+  "apiUser": "POS_ENT_Test_001",
+  "apiPass": "POS_ENT_Test_001!*!*",
+  "testMode": true,
+  "card": {
+    "number": "5456165456165454"
+  }
+}

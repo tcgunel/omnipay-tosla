@@ -1,0 +1,14 @@
+{
+  "clientId": "1000000494",
+  "apiUser": "POS_ENT_Test_001",
+  "apiPass": "POS_ENT_Test_001!*!*",
+  "testMode": true,
+  "orderId": "TOS-20260322-000002",
+  "mdStatus": "1",
+  "threeDSessionId": "sess-3d-abc123def456",
+  "bankResponseCode": "00",
+  "bankResponseMessage": "Onaylandi",
+  "requestStatus": "1",
+  "hashParameters": "ClientId,ApiUser,OrderId,MdStatus,BankResponseCode,BankResponseMessage,RequestStatus",
+  "hash": "test-hash-value"
+}

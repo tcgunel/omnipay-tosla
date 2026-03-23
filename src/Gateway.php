@@ -7,7 +7,6 @@ use Omnipay\Common\Message\AbstractRequest;
 use Omnipay\Tosla\Message\BinLookupRequest;
 use Omnipay\Tosla\Message\ChargeRequest;
 use Omnipay\Tosla\Message\CheckoutFormRequest;
-use Omnipay\Tosla\Message\CompletePurchaseRequest;
 use Omnipay\Tosla\Message\EnrolmentRequest;
 use Omnipay\Tosla\Message\HistoryRequest;
 use Omnipay\Tosla\Message\PaymentInquiryRequest;

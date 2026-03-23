@@ -1,0 +1,12 @@
+{
+  "clientId": "1000000494",
+  "apiUser": "POS_ENT_Test_001",
+  "apiPass": "POS_ENT_Test_001!*!*",
+  "testMode": true,
+  "amount": "75.00",
+  "currency": "TRY",
+  "transactionId": "TOS-20260322-000006",
+  "installment": 3,
+  "description": "Checkout form testi",
+  "returnUrl": "https://example.com/checkout-callback"
+}

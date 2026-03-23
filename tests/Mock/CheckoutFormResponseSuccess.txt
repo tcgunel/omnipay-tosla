@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+Server: nginx
+Content-Type: application/json
+Content-Length: 150
+Date: Sun, 22 Mar 2026 12:00:00 GMT
+
+{"Code":0,"Message":"Basarili","ThreeDSessionId":"sess-cf-mno345pqr678","TransactionId":"TSL-TRX-00006"}

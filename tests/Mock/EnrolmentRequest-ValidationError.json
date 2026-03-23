@@ -1,0 +1,15 @@
+{
+  "testMode": true,
+  "secure": true,
+  "amount": "25.50",
+  "currency": "TRY",
+  "returnUrl": "https://example.com/3d-callback",
+  "card": {
+    "firstName": "Ayse",
+    "lastName": "Demir",
+    "number": "5456165456165454",
+    "expiryMonth": "06",
+    "expiryYear": "2029",
+    "cvv": "123"
+  }
+}

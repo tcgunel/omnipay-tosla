@@ -1,0 +1,22 @@
+{
+  "clientId": "1000000494",
+  "apiUser": "POS_ENT_Test_001",
+  "apiPass": "POS_ENT_Test_001!*!*",
+  "testMode": true,
+  "rnd": "123456",
+  "timeSpan": "20260322120000",
+  "amount": "15.22",
+  "currency": "TRY",
+  "transactionId": "TOS-20260322-000001",
+  "installment": 0,
+  "description": "Test odeme",
+  "returnUrl": "https://example.com/callback",
+  "card": {
+    "firstName": "Mehmet",
+    "lastName": "Yilmaz",
+    "number": "5456165456165454",
+    "expiryMonth": "12",
+    "expiryYear": "2030",
+    "cvv": "000"
+  }
+}

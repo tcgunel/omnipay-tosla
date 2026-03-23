@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+Server: nginx
+Content-Type: application/json
+Content-Length: 500
+Date: Sun, 22 Mar 2026 12:00:00 GMT
+
+{"Code":0,"Message":"Basarili","TransactionType":1,"CreateDate":"2026-03-22T12:00:00","OrderId":"TOS-20260322-000001","BankResponseCode":"00","BankResponseMessage":"Onaylandi","AuthCode":"123456","HostReferenceNumber":"789012345678","Amount":1522,"Currency":949,"InstallmentCount":0,"ClientId":1000000494,"CardNo":"545616******5454","RequestStatus":1,"RefundedAmount":0,"PostAuthedAmount":0,"TransactionId":"TSL-TRX-00001","CommissionStatus":0,"NetAmount":1522,"MerchantCommissionAmount":0,"MerchantCommissionRate":0,"CardBankId":111,"CardTypeId":2,"ValorDate":0,"TransactionDate":0,"BankValorDate":0,"ExtraParameters":null}

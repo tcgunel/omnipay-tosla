@@ -1,0 +1,13 @@
+{
+  "testMode": true,
+  "amount": "15.22",
+  "currency": "TRY",
+  "card": {
+    "firstName": "Mehmet",
+    "lastName": "Yilmaz",
+    "number": "5456165456165454",
+    "expiryMonth": "12",
+    "expiryYear": "2030",
+    "cvv": "000"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "clientId": "1000000494",
+  "apiUser": "POS_ENT_Test_001",
+  "apiPass": "POS_ENT_Test_001!*!*",
+  "testMode": true,
+  "amount": "49.90",
+  "currency": "TRY",
+  "transactionId": "TOS-20260322-000005",
+  "installment": 0,
+  "description": "Ortak odeme sayfasi testi",
+  "returnUrl": "https://example.com/payment-page-callback"
+}
