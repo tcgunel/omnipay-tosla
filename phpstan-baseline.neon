@@ -37,7 +37,7 @@ parameters:
 
 		-
 			message: "#^Call to an undefined method Omnipay\\\\Tosla\\\\Message\\\\CheckoutFormResponse\\:\\:getParameter\\(\\)\\.$#"
-			count: 22
+			count: 23
 			path: src/Message/CheckoutFormResponse.php
 
 		-
@@ -47,7 +47,7 @@ parameters:
 
 		-
 			message: "#^Call to an undefined method Omnipay\\\\Tosla\\\\Message\\\\CheckoutFormResponse\\:\\:setParameter\\(\\)\\.$#"
-			count: 22
+			count: 23
 			path: src/Message/CheckoutFormResponse.php
 
 		-
@@ -74,6 +74,16 @@ parameters:
 			message: "#^Method Omnipay\\\\Tosla\\\\Message\\\\HistoryResponse\\:\\:getRedirectData\\(\\) should return array but returns null\\.$#"
 			count: 1
 			path: src/Message/HistoryResponse.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of function sha1 expects string, int\\<0, max\\> given\\.$#"
+			count: 1
+			path: src/Message/InstallmentOptionsRequest.php
+
+		-
+			message: "#^Method Omnipay\\\\Tosla\\\\Message\\\\InstallmentOptionsResponse\\:\\:getRedirectData\\(\\) should return array but returns null\\.$#"
+			count: 1
+			path: src/Message/InstallmentOptionsResponse.php
 
 		-
 			message: "#^Parameter \\#1 \\$string of function sha1 expects string, int\\<0, max\\> given\\.$#"

@@ -1,0 +1,6 @@
+HTTP/1.1 200 OK
+Server: nginx
+Content-Type: application/json
+Date: Sun, 22 Mar 2026 12:00:00 GMT
+
+{"IsExist":false,"PlatformId":0,"BrandId":0,"CardTypeId":0,"InstallmentOptions":[{"Installment":1,"Title":"Tek Cekim","Amount":10000,"Currency":949},{"Installment":2,"Title":"2 Taksit","Amount":10101,"Currency":949},{"Installment":3,"Title":"3 Taksit","Amount":10204,"Currency":949}],"Code":0,"Message":"Basarili"}

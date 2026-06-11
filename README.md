@@ -25,7 +25,9 @@ Check /examples folder for examples.
 ## Methods
 #### Payment Services
 
-* binLookup($options) // [Bin Sorgulama](https://tosla.com/isim-icin/gelistirici-merkezi#taksit-bilgisi)
+* binLookup($options) // [Bin Sorgulama / Taksit ve Komisyon Bilgisi (GetCommissionAndInstallmentInfo)](https://tosla.com/isim-icin/gelistirici-merkezi#taksit-bilgisi)
+* commissionAndInstallmentInfo($options) // binLookup alias'ı — [Taksit ve Komisyon Bilgisi (GetCommissionAndInstallmentInfo)](https://tosla.com/isim-icin/gelistirici-merkezi#taksit-bilgisi)
+* installmentOptions($options) // [Taksit ve Taksitlere Karşılık Gelen Tutar Bilgisi (GetInstallmentOptions)](https://tosla.com/isim-icin/gelistirici-merkezi#taksit-ve-taksitlere-karsilik-gelen-turar-bilgisi)
 * purchase($options) // [3D Secure](https://tosla.com/isim-icin/gelistirici-merkezi#3d-islem-baslatma) ile yada [3D Secure olmadan](https://tosla.com/isim-icin/gelistirici-merkezi#non3d-ile-odeme) ödeme.
 * paymentPage($options) // [Ortak Ödeme Sayfası](https://tosla.com/isim-icin/gelistirici-merkezi#ortak-odeme-sayfasi)
 * verifyEnrolment($options) // [3D Ödeme Doğrulama](https://tosla.com/isim-icin/gelistirici-merkezi#callbackurl-hash-dogrulama-mekanizmasi)
@@ -33,6 +35,24 @@ Check /examples folder for examples.
 * history($options) // [Ödeme Sorgulama (Tarih Aralığı Parametreli)](https://tosla.com/isim-icin/gelistirici-merkezi#islem-listeleme)
 * void($options) // [Gün Sonu Öncesi İşlem İptali](https://tosla.com/isim-icin/gelistirici-merkezi#iptal)
 * refund($options) // [İade](https://tosla.com/isim-icin/gelistirici-merkezi#iade)
+
+#### Komisyon Yansıtma (isCommission)
+
+Taksitli işlemde komisyonu müşteriye yansıtmak için `hasInstallmentComission = 1` ve
+`totalAmount` (GetInstallmentOptions'tan dönen, seçilen taksite karşılık gelen tutar)
+gönderilmelidir:
+
+```php
+$gateway->purchase([
+    'secure'      => true,
+    'amount'      => '100.00',
+    'currency'    => 'TRY',
+    'installment' => 3,
+    'hasInstallmentComission' => 1,
+    'totalAmount' => '101.01', // installmentOptions() çıktısındaki ilgili taksitin tutarı
+    // ...
+]);
+```
 
 ## Treeware
 

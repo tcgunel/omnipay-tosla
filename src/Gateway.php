@@ -9,6 +9,7 @@ use Omnipay\Tosla\Message\ChargeRequest;
 use Omnipay\Tosla\Message\CheckoutFormRequest;
 use Omnipay\Tosla\Message\EnrolmentRequest;
 use Omnipay\Tosla\Message\HistoryRequest;
+use Omnipay\Tosla\Message\InstallmentOptionsRequest;
 use Omnipay\Tosla\Message\PaymentInquiryRequest;
 use Omnipay\Tosla\Message\PaymentPageRequest;
 use Omnipay\Tosla\Message\RefundRequest;
@@ -66,6 +67,24 @@ class Gateway extends AbstractGateway
     public function binLookup(array $parameters = []): AbstractRequest
     {
         return $this->createRequest(BinLookupRequest::class, $parameters);
+    }
+
+    /**
+     * Taksit ve Komisyon Bilgisi (GetCommissionAndInstallmentInfo).
+     * Bin numarasına göre bankanın taksit ve komisyon oranlarını döner.
+     */
+    public function commissionAndInstallmentInfo(array $parameters = []): AbstractRequest
+    {
+        return $this->createRequest(BinLookupRequest::class, $parameters);
+    }
+
+    /**
+     * Taksit ve Taksitlere Karşılık Gelen Tutar Bilgisi (GetInstallmentOptions).
+     * Verilen tutar için her taksitteki toplam tutarı (totalAmount) döner.
+     */
+    public function installmentOptions(array $parameters = []): AbstractRequest
+    {
+        return $this->createRequest(InstallmentOptionsRequest::class, $parameters);
     }
 
     public function paymentInquiry(array $parameters = []): AbstractRequest

@@ -44,6 +44,21 @@ trait PurchaseGettersSetters
         return $this->setParameter('hasInstallmentCommission', $value);
     }
 
+    /**
+     * Komisyon yansıtılan (isCommission = 1) taksitli işlemlerde bankaya
+     * gönderilecek toplam tutar. GetInstallmentOptions servisinden dönen,
+     * seçilen taksite karşılık gelen tutar (major birim) verilmelidir.
+     */
+    public function getTotalAmount()
+    {
+        return $this->getParameter('totalAmount');
+    }
+
+    public function setTotalAmount($value)
+    {
+        return $this->setParameter('totalAmount', $value);
+    }
+
     public function getSecure()
     {
         return $this->getParameter('secure');

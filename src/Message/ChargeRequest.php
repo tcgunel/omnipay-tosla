@@ -52,6 +52,11 @@ class ChargeRequest extends RemoteAbstractRequest
             'extraParameters' => $this->getExtraParameters(),
         ];
 
+        // totalAmount is mandatory only when commission is reflected (isCommission = 1).
+        if (! is_null($this->getTotalAmount())) {
+            $purchaseRequestModel['totalAmount'] = $this->getTotalAmount();
+        }
+
         $purchaseRequestModel['hash'] = $this->hash($purchaseRequestModel, $this->getApiPass());
 
         return new ChargeRequestModel(array_merge([

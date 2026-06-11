@@ -40,7 +40,7 @@ class EnrolmentRequest extends RemoteAbstractRequest
         $rnd = random_int(1, 10000);
         $time = date('YmdHis');
 
-        $EnrolmentRequestModel = new EnrolmentRequestModel([
+        $payload = [
             'clientId' => $this->getClientId(),
             'apiUser' => $this->getApiUser(),
             'rnd' => $rnd,
@@ -54,7 +54,14 @@ class EnrolmentRequest extends RemoteAbstractRequest
             'description' => $this->getDescription(),
             'echo' => $this->getEcho(),
             'extraParameters' => $this->getExtraParameters(),
-        ]);
+        ];
+
+        // totalAmount is mandatory only when commission is reflected (isCommission = 1).
+        if (! is_null($this->getTotalAmount())) {
+            $payload['totalAmount'] = $this->getTotalAmount();
+        }
+
+        $EnrolmentRequestModel = new EnrolmentRequestModel($payload);
 
         $EnrolmentRequestModel->hash = $this->hash($EnrolmentRequestModel, $this->getApiPass());
 
