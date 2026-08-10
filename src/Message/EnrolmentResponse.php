@@ -29,7 +29,17 @@ class EnrolmentResponse extends RemoteAbstractResponse implements RedirectRespon
 
     public function getMessage(): string
     {
-        return $this->response->Message;
+        if (! empty($this->response->Message)) {
+
+            return $this->response->Message;
+
+        }
+
+        // Tosla omits Message on some failures (e.g. code 998, bad credentials).
+        // Surface the code so the caller still has something to diagnose with.
+        return $this->response->Code !== null
+            ? sprintf('Tosla error code: %d', $this->response->Code)
+            : '';
     }
 
     public function isRedirect(): bool

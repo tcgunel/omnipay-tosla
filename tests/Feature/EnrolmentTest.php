@@ -97,4 +97,67 @@ class EnrolmentTest extends TestCase
         $this->assertNull($data->TransactionId);
         $this->assertFalse($response->isRedirect());
     }
+
+    /**
+     * Tosla returns Message as null on credential failures (code 998).
+     * getMessage() must not fatal, and must still expose the code.
+     */
+    public function test_enrolment_response_auth_error_with_null_message()
+    {
+        $httpResponse = $this->getMockHttpResponse('EnrolmentResponseAuthError.txt');
+
+        $response = new EnrolmentResponse($this->getMockRequest(), $httpResponse);
+
+        $data = $response->getData();
+
+        $this->assertFalse($response->isSuccessful());
+        $this->assertFalse($response->isRedirect());
+
+        $this->assertEquals(998, $data->Code);
+        $this->assertNull($data->Message);
+
+        $this->assertEquals('Tosla error code: 998', $response->getMessage());
+    }
+
+    /**
+     * Some Tosla failures omit the Message key entirely. Previously this left
+     * the typed property uninitialized and getMessage() threw an Error.
+     */
+    public function test_enrolment_response_with_missing_message_key()
+    {
+        $httpResponse = $this->getMockHttpResponse('EnrolmentResponseMessageMissing.txt');
+
+        $response = new EnrolmentResponse($this->getMockRequest(), $httpResponse);
+
+        $data = $response->getData();
+
+        $this->assertFalse($response->isSuccessful());
+        $this->assertFalse($response->isRedirect());
+
+        $this->assertEquals(998, $data->Code);
+        $this->assertNull($data->Message);
+        $this->assertNull($data->ThreeDSessionId);
+        $this->assertNull($data->TransactionId);
+
+        $this->assertEquals('Tosla error code: 998', $response->getMessage());
+    }
+
+    /**
+     * An empty body must not fatal either - every property stays null and
+     * getMessage() degrades to an empty string.
+     */
+    public function test_enrolment_response_with_empty_payload()
+    {
+        $response = new EnrolmentResponse($this->getMockRequest(), []);
+
+        $data = $response->getData();
+
+        $this->assertFalse($response->isSuccessful());
+        $this->assertFalse($response->isRedirect());
+
+        $this->assertNull($data->Code);
+        $this->assertNull($data->Message);
+
+        $this->assertEquals('', $response->getMessage());
+    }
 }
