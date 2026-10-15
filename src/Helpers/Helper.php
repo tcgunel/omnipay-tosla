@@ -14,12 +14,15 @@ class Helper
 
     public static function format_amount($var)
     {
-        return $var * 100;
+        // Kuruş integer. Round first: plain $var * 100 leaves float dust
+        // (8.53 * 100 = 852.9999…) and casting that to int silently truncates
+        // a kuruş (8.53 TL → 852) in integer-typed fields.
+        return (int) round($var * 100);
     }
 
     public static function format_totalAmount($var)
     {
-        return $var * 100;
+        return (int) round($var * 100);
     }
 
     public static function format_currency($var)

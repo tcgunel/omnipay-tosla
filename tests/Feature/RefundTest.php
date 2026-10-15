@@ -39,6 +39,31 @@ class RefundTest extends TestCase
         $this->assertNotEmpty($data->hash);
     }
 
+    /**
+     * Amounts are sent as kuruş integers (docs: "1522 = 15 TL 22 Kuruş").
+     * Float dust used to truncate a kuruş off values whose ×100 lands just
+     * below the integer (8.53 → 852.9999… → 852, 0.29 → 28).
+     */
+    public function test_refund_request_amount_is_exact_kurus()
+    {
+        $amounts = ['8.53' => 853, '0.29' => 29, '19.99' => 1999, '123.45' => 12345];
+
+        foreach ($amounts as $amount => $kurus) {
+            $request = new RefundRequest($this->getHttpClient(), $this->getHttpRequest());
+
+            $request->initialize([
+                'clientId' => '1000000494',
+                'apiUser' => 'POS_ENT_Test_001',
+                'apiPass' => 'POS_ENT_Test_001!*!*',
+                'testMode' => true,
+                'orderId' => 'TOS-20260322-000001',
+                'amount' => $amount,
+            ]);
+
+            $this->assertSame($kurus, $request->getData()->amount, "{$amount} TL must be {$kurus} kuruş");
+        }
+    }
+
     public function test_refund_request_validation_error()
     {
         $options = file_get_contents(__DIR__ . '/../Mock/RefundRequest-ValidationError.json');
