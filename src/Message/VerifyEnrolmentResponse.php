@@ -21,21 +21,52 @@ class VerifyEnrolmentResponse extends RemoteAbstractResponse
 
     public function isSuccessful(): bool
     {
-        return $this->response->BankResponseCode === '00' && $this->validateHash();
+        return isset($this->response->BankResponseCode)
+            && $this->response->BankResponseCode === '00'
+            && $this->validateHash();
     }
 
-    private function validateHash()
-    {
-        $hash_parameters = explode(',', $this->response->HashParameters);
+    /**
+     * Fields that must be covered by the callback hash. HashParameters is
+     * posted by the caller, so without this list an attacker could sign an
+     * empty or harmless field set and change OrderId or BankResponseCode.
+     */
+    private const REQUIRED_HASH_PARAMETERS = ['OrderId', 'BankResponseCode'];
 
-        $hash_string = $this->request->getApiPass();
-        foreach ($hash_parameters as $hash_parameter) {
-            $hash_string .= $this->response->$hash_parameter;
+    private function validateHash(): bool
+    {
+        $secret = (string) $this->request->getApiPass();
+
+        $posted_hash = isset($this->response->Hash) ? (string) $this->response->Hash : '';
+
+        $hash_parameters_raw = isset($this->response->HashParameters) ? (string) $this->response->HashParameters : '';
+
+        if ($secret === '' || $posted_hash === '' || trim($hash_parameters_raw) === '') {
+            return false;
         }
 
-        $hashing_bytes = hash('sha512', ($hash_string), true);
+        $hash_parameters = array_map('trim', explode(',', $hash_parameters_raw));
 
-        return $this->response->Hash === base64_encode($hashing_bytes);
+        foreach (self::REQUIRED_HASH_PARAMETERS as $required) {
+            if (! in_array($required, $hash_parameters, true)) {
+                return false;
+            }
+
+            if (! isset($this->response->$required) || (string) $this->response->$required === '') {
+                return false;
+            }
+        }
+
+        $hash_string = $secret;
+        foreach ($hash_parameters as $hash_parameter) {
+            $hash_string .= ($hash_parameter !== '' && property_exists($this->response, $hash_parameter) && isset($this->response->$hash_parameter))
+                ? (string) $this->response->$hash_parameter
+                : '';
+        }
+
+        $hashing_bytes = hash('sha512', $hash_string, true);
+
+        return hash_equals(base64_encode($hashing_bytes), $posted_hash);
     }
 
     public function getMessage(): ?string
